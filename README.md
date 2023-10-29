@@ -5,7 +5,7 @@
 ## Install
 
 1. 下载本存储库并解压至某一目录（最好不要带中文）
-    ![download](.\resource\down.png)
+    ![download](./resource/down.png)
 2. [frp](https://gofrp.org/zh-cn/) 程序内置了GO 可能会被杀毒软件误杀，请放至白名单。
 3. 修改frpc.ini
    - `[common]`为远程服务器配置，如果使用公用服务器请不要修改
