@@ -2,36 +2,39 @@
 
 使用Frp内网穿透，远程访问端口
 
+## Latest
+- 20260502更新  
+   - 建议采用[Frpc-Desktop](https://github.com/luckjiawei/frpc-desktop)而不是本项目
 ## Install
 
 1. 下载本存储库并解压至某一目录（最好不要带中文）
     ![download](./resource/down.png)
 2. [frp](https://gofrp.org/zh-cn/) 程序内置了GO 可能会被杀毒软件误杀，请放至白名单。
-3. 修改frpc.ini
+3. 修改frpc.toml
    - `[common]`为远程服务器配置，如果使用公用服务器请不要修改
 
-        ```ini
-        [common]
-        server_addr = 43.163.203.252
-        server_port = 52013
-        token=12345678123456781234567812345678123456781234567812345678
+        ```toml
+        serverAddr = "zsyq.hxlab.tech"
+        serverPort = 7000
+        auth.token = "12345678123456781234567812345678123456781234567812345678"
         ```  
 
    - 在配置文件中自行添加端口，例如以下把本地端口`3389`穿透至远程服务器端口`5200`
 
-        ```ini
-        [rdp]
-        type = tcp
-        local_ip = 127.0.0.1
-        local_port = 3389
-        remote_port = 5200
+        ```toml
+        [[proxies]]
+        name = "rdp"
+        type = "tcp"
+        localIP = "127.0.0.1"
+        localPort = 3389
+        remotePort = 5200
         ```
 
         `type`:连接类型，常见的有`tcp`，`udp`
         `local_ip`:穿透的本地IP，`0.0.0.0`,`127.0.0.1`都是本地地址
         `local_port`:需要穿透的端口
         `remote_port`:远程访问端口
-   - 可以在[frp-dashboard](http://43.163.203.252:7500/static/#/proxies/tcp)(账密:admin)查看可用远程端口
+   - 可以在[frp-dashboard](http://zsyq.hxlab.tech:7500/static/#/proxies/tcp)(账密:admin)查看可用远程端口
    - 联系[管理员](yhx910@ouc.edu.cn)从服务器防火墙放行远程端口
    - 配置完成后可以双击`rdp.bat`查看frp是否正常运行
    - 更多穿透方法请参考<https://gofrp.org/zh-cn/docs/examples/>
@@ -67,4 +70,4 @@
 [1. FRP 官网](https://gofrp.org/zh-cn/)  
 [2. Windows 任务计划程序设置程序frpc自启动服务以及出现0X41301错误解决方法](http://www.kaixinit.com/info/maintenance/8212.html)  
 [3. FRP Github](https://github.com/fatedier/frp)  
-[4. FRP Dashborad](http://43.163.203.252:7500/static/#/proxies/tcp)  
+[4. FRP Dashborad](http://zsyq.hxlab.tech:7500/static/#/proxies/tcp)  
