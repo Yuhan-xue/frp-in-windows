@@ -70,4 +70,13 @@
 [1. FRP 官网](https://gofrp.org/zh-cn/)  
 [2. Windows 任务计划程序设置程序frpc自启动服务以及出现0X41301错误解决方法](http://www.kaixinit.com/info/maintenance/8212.html)  
 [3. FRP Github](https://github.com/fatedier/frp)  
-[4. FRP Dashborad](http://zsyq.hxlab.tech:7500/static/#/proxies/tcp)  
+[4. FRP Dashborad](http://zsyq.hxlab.tech:7500/static/#/proxies/tcp)
+
+---
+
+## 许可与版权
+
+- 本仓库未附 `LICENSE` 文件，即未声明开源许可证；默认保留所有权利（All rights reserved）。
+- 仓库内引用的第三方数据、图片、教材与工具，版权归各自权利人；转载或商用前请核对来源条款。
+- 如需授权、引用或再分发，请先联系仓库维护者。
+- `frp` / `frpc.exe` 遵循上游 fatedier/frp 的 MIT 许可；本仓库的 Windows 封装脚本未声明许可。
